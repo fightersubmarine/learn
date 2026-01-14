@@ -19,11 +19,26 @@ final class SecondViewController: UIViewController {
     
     // MARK: - LifeCycle
     
+    override func loadView() {
+        view = UIView()
+        view.backgroundColor = .purple
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Second"
-        view.backgroundColor = .purple
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
